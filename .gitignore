@@ -1,0 +1,45 @@
+# Ignore everything
+*
+
+# Do not ignore .gitignore
+!.gitignore
+
+# Unignore specific wp-content subdirectories
+!wp-content/
+!wp-content/themes/
+!wp-content/themes/fictional-block-theme/
+!wp-content/uploads/
+!wp-content/plugins/
+!wp-content/mu-plugins/
+!wp-content/ai1wm-backups/
+
+# Unignore contents of specific wp-content subdirectories
+!wp-content/themes/fictional-block-theme/**
+!wp-content/uploads/** 
+!wp-content/mu-plugins/**
+!wp-content/ai1wm-backups/**
+!README.md
+
+# Unignore specific Plugins
+!wp-content/plugins/all-in-one-wp-migration/
+!wp-content/plugins/all-in-one-wp-migration/**
+!wp-content/plugins/our-first-unique-plugin/
+!wp-content/plugins/our-first-unique-plugin/**
+!wp-content/plugins/our-word-filter-plugin/
+!wp-content/plugins/our-word-filter-plugin/**
+!wp-content/plugins/are-you-paying-attention/
+!wp-content/plugins/are-you-paying-attention/**
+!wp-content/plugins/featured-professor/
+!wp-content/plugins/featured-professor/**
+!wp-content/plugins/pets-custom-post-type/
+!wp-content/plugins/pets-custom-post-type/**
+!wp-content/plugins/new-database-table/
+!wp-content/plugins/new-database-table/**
+!wp-content/plugins/new-database-table-block/
+!wp-content/plugins/new-database-table-block/**
+
+
+# Ignore specific folders even if they are inside the unignored directories
+wp-content/themes/fictional-university-theme/build/
+**/.DS_Store
+**/node_modules/
