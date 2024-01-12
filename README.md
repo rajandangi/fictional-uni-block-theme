@@ -1,4 +1,4 @@
-# Fictional University Theme 
+# Fictional University Block Theme 
 A Classic Theme. You can purchase complete Course using this [LINK](https://www.udemy.com/become-a-wordpress-developer-php-javascript/?couponCode=LEARNWEBCODESITE)
 
 ## Required plugins for this theme:
@@ -20,13 +20,7 @@ This plugin filters specific words from the WordPress content on the front-end. 
 ### 4. featured-professor : 
 This plugin inserts custom post items into the content and fetches the content dynamically using the WordPress block editor. It teaches several concepts about the WordPress Gutenberg block editor. For example: registering post_meta and saving, updating, and deleting post_meta from Gutenberg blocks,`select('core').getEntityRecords('postType', 'professor', { per_page: -1 })`,`select(coreDataStore).hasFinishedResolution('getEntityRecords', ('postType', 'professor', { per_page: -1 }))`,`@wordpress/api-fetch`, internationalization at the block editor level, etc.
 
-### 5. pets-custom-post-type : 
-This basic plugin shows how to render large data using custom post types and how slow it is when it comes to search/filter.
-
-### 6. new-database-table : 
-This plugin is a custom database table version of the `pets-custom-post-type` plugin. It teaches how to get benefits from custom database tables in certain situations regarding performance. Particularly, it shows how we can boost performance over custom post types using custom database tables. It also teaches about the ==dbDelta== function in WordPress.
-
-### 7. new-database-table-block :
+### 5. new-database-table-block :
 This is just a block editor version of the `new-database-table` plugin with exactly the same concept.
 
 This repository also contains the `ai1wm-backups` directory under `wp-content`, which contains database backups of this project taken using the `All-In-One WP Migration` plugin. The `All-In-One WP Migration` plugin is also included with it.
