@@ -110,6 +110,18 @@ wp.blocks.registerBlockType("ourblocktheme/banner", {
   save: SaveComponent
 });
 function EditComponent() {
+  function useMeLater() {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+      className: "headline headline--large"
+    }, "Welcome!"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+      className: "headline headline--medium"
+    }, "We think you\u2019ll like it here."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "headline headline--small"
+    }, "Why don\u2019t you check out the ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "major"), " you\u2019re interested in?"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "#",
+      className: "btn btn--large btn--blue"
+    }, "Find Your Major"));
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "page-banner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -124,7 +136,6 @@ function EditComponent() {
 function SaveComponent() {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This is from our banner bloc");
 }
-console.log("Banner block loaded");
 })();
 
 /******/ })()

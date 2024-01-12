@@ -8,6 +8,17 @@ wp.blocks.registerBlockType("ourblocktheme/banner", {
 })
 
 function EditComponent() {
+    function useMeLater() {
+        return (
+            <>
+                <h1 className="headline headline--large">Welcome!</h1>
+                <h2 className="headline headline--medium">We think you&rsquo;ll like it here.</h2>
+                <h3 className="headline headline--small">Why don&rsquo;t you check out the <strong>major</strong> you&rsquo;re
+                    interested in?</h3>
+                <a href="#" className="btn btn--large btn--blue">Find Your Major</a>
+            </>
+        )
+    }
     return (
         <div className="page-banner">
             <div className="page-banner__bg-image"
@@ -21,6 +32,6 @@ function EditComponent() {
 }
 
 function SaveComponent() {
+
     return <p>This is from our banner bloc</p>
 }
-console.log("Banner block loaded")
