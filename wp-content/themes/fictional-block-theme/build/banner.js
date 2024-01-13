@@ -2,6 +2,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./images/library-hero.jpg":
+/*!*********************************!*\
+  !*** ./images/library-hero.jpg ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "images/library-hero.5a109598.jpg";
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "React" ***!
@@ -19,6 +29,16 @@ module.exports = window["React"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
 
 /***/ })
 
@@ -73,6 +93,18 @@ module.exports = window["wp"]["blockEditor"];
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -89,6 +121,29 @@ module.exports = window["wp"]["blockEditor"];
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -101,27 +156,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_library_hero_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../../images/library-hero.jpg */ "./images/library-hero.jpg");
 
 
-wp.blocks.registerBlockType("ourblocktheme/banner", {
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.registerBlockType)("ourblocktheme/banner", {
   title: "Banner",
   icon: "welcome-learn-more",
   edit: EditComponent,
   save: SaveComponent
 });
 function EditComponent() {
-  function useMeLater() {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
-      className: "headline headline--large"
-    }, "Welcome!"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-      className: "headline headline--medium"
-    }, "We think you\u2019ll like it here."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      className: "headline headline--small"
-    }, "Why don\u2019t you check out the ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, "major"), " you\u2019re interested in?"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-      href: "#",
-      className: "btn btn--large btn--blue"
-    }, "Find Your Major"));
-  }
+  // function useMeLater() {
+  //     return (
+  //         <>
+  //             <h1 className="headline headline--large">Welcome!</h1>
+  //             <h2 className="headline headline--medium">We think you&rsquo;ll like it here.</h2>
+  //             <h3 className="headline headline--small">Why don&rsquo;t you check out the <strong>major</strong> you&rsquo;re
+  //                 interested in?</h3>
+  //             <a href="#" className="btn btn--large btn--blue">Find Your Major</a>
+  //         </>
+  //     )
+  // }
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "page-banner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "page-banner__bg-image",
+    style: {
+      backgroundImage: `url(${_images_library_hero_jpg__WEBPACK_IMPORTED_MODULE_3__})`
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "page-banner__content container t-center c-white"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+    allowedBlocks: ["ourblocktheme/genericheading"]
+  })));
+}
+function SaveComponent() {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "page-banner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -131,10 +204,7 @@ function EditComponent() {
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "page-banner__content container t-center c-white"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, null)));
-}
-function SaveComponent() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This is from our banner bloc");
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null)));
 }
 })();
 
