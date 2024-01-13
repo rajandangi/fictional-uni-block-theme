@@ -4,6 +4,7 @@ import { RichText, InspectorControls, BlockControls, __experimentalLinkControl a
 import { registerBlockType } from "@wordpress/blocks"
 import { useState } from "@wordpress/element"
 import { __ } from "@wordpress/i18n"
+import ourColors from "../inc/ourColors"
 
 registerBlockType("ourblocktheme/genericbutton", {
     title: "Generic Button",
@@ -32,12 +33,6 @@ function EditComponent(props) {
         props.setAttributes({ linkObject: newLink })
     }
 
-    const ourColors = [
-        { name: "blue", color: "#0d3b66" },
-        { name: "orange", color: "#ee964b" },
-        { name: "dark-orange", color: "#f95738" }
-    ];
-
     const currentColorValue = ourColors.filter(color => {
         return color.name === props.attributes.colorName
     })[0].color;
@@ -47,7 +42,7 @@ function EditComponent(props) {
         const { name } = getColorObjectByColorValue(ourColors, newColorCode)
         props.setAttributes({ colorName: name })
     }
-    console.log(props.attributes.colorName)
+
     return (
         <>
             <BlockControls>
