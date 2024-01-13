@@ -166,6 +166,15 @@ __webpack_require__.r(__webpack_exports__);
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.registerBlockType)("ourblocktheme/banner", {
   title: "Banner",
   icon: "welcome-learn-more",
+  supports: {
+    align: ["full"]
+  },
+  attributes: {
+    align: {
+      type: "string",
+      default: "full"
+    }
+  },
   edit: EditComponent,
   save: SaveComponent
 });
@@ -191,7 +200,7 @@ function EditComponent() {
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "page-banner__content container t-center c-white"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
-    allowedBlocks: ["ourblocktheme/genericheading"]
+    allowedBlocks: ["ourblocktheme/genericheading", "ourblocktheme/genericbutton"]
   })));
 }
 function SaveComponent() {

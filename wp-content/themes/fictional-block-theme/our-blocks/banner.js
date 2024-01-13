@@ -5,6 +5,12 @@ import libraryHero from '/images/library-hero.jpg';
 registerBlockType("ourblocktheme/banner", {
     title: "Banner",
     icon: "welcome-learn-more",
+    supports: {
+        align: ["full"]
+    },
+    attributes: {
+        align: { type: "string", default: "full" }
+    },
     edit: EditComponent,
     save: SaveComponent
 })
@@ -27,7 +33,7 @@ function EditComponent() {
                 style={{ backgroundImage: `url(${libraryHero})` }}>
             </div>
             <div className="page-banner__content container t-center c-white">
-                <InnerBlocks allowedBlocks={["ourblocktheme/genericheading"]} />
+                <InnerBlocks allowedBlocks={["ourblocktheme/genericheading", "ourblocktheme/genericbutton"]} />
             </div>
         </div >
     )

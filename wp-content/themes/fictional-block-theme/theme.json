@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "styles": {
+        "blocks": {
+            "core/button": {
+                "color": {
+                    "background": "var(--wp--preset--color--primary)",
+                    "text": "var(--wp--preset--color--background)"
+                }
+            }
+        }
+    },
+    "settings": {
+        "typography": {
+            "fontFamilies": [],
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "textDecoration": false,
+            "lineHeight": false,
+            "textTransform": false,
+            "dropCap": false,
+            "customFontSize": false,
+            "fontSizes": []
+        },
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "color": false,
+                    "radius": false,
+                    "style": false,
+                    "width": false
+                }
+            }
+        },
+        "color": {
+            "background": true,
+            "text": false,
+            "link": false,
+            "custom": false,
+            "defaultPalette": false,
+            "duotone": [],
+            "customDuotone": false,
+            "gradients": [],
+            "customGradient": false,
+            "palette": [
+                {
+                    "color": "#0D3B66",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#EE964B",
+                    "name": "Secondary",
+                    "slug": "secondary"
+                },
+                {
+                    "color": "#FFFFFF",
+                    "name": "Background",
+                    "slug": "background"
+                },
+                {
+                    "color": "#333333",
+                    "name": "Foreground",
+                    "slug": "foreground"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "840px"
+        }
+    }
+}
