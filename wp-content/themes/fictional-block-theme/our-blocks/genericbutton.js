@@ -84,7 +84,7 @@ function EditComponent(props) {
                 placeholder={__('Find Your Major')}
             />
             {isLinkPickerVisible && (
-                <Popover position="middle center">
+                <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
                     <LinkControl value={props.attributes.linkObject} title={props.attributes.linkObject.title} onChange={handleLinkChange} />
                     <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
                 </Popover>

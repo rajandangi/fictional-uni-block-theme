@@ -309,7 +309,8 @@ function EditComponent(props) {
     onChange: handleTextChange,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Find Your Major')
   }), isLinkPickerVisible && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Popover, {
-    position: "middle center"
+    position: "middle center",
+    onFocusOutside: () => setIsLinkPickerVisible(false)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalLinkControl, {
     value: props.attributes.linkObject,
     title: props.attributes.linkObject.title,
