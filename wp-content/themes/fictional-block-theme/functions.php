@@ -241,10 +241,12 @@ class JSXBlock
 {
 	private $name;
 	private $renderCallback;
+	private $data;
 
-	function __construct($name, $renderCallback = null)
+	function __construct($name, $renderCallback = null, $data = null)
 	{
 		$this->name = $name;
+		$this->data = $data;
 		$this->renderCallback = $renderCallback;
 		add_action('init', [$this, 'onInit']);
 	}
@@ -263,6 +265,10 @@ class JSXBlock
 			get_stylesheet_directory_uri() . "/build/{$this->name}.js",
 			array('wp-blocks', 'wp-editor')
 		);
+
+		if ($this->data) {
+			wp_localize_script($this->name, $this->name, $this->data);
+		}
 
 		$ourArgs = array(
 			'editor_script' => $this->name,
