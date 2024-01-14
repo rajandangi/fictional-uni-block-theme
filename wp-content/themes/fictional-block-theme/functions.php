@@ -240,10 +240,20 @@ function makeNotePrivate($data, $postarr)
 class JSXBlock
 {
 	private $name;
-	function __construct($name)
+	private $renderCallback;
+
+	function __construct($name, $renderCallback = null)
 	{
 		$this->name = $name;
+		$this->renderCallback = $renderCallback;
 		add_action('init', [$this, 'onInit']);
+	}
+
+	function ourRenderCallback($attributes, $content)
+	{
+		ob_start();
+		require get_theme_file_path("/our-blocks/{$this->name}.php");
+		return ob_get_clean();
 	}
 
 	function onInit()
@@ -253,14 +263,17 @@ class JSXBlock
 			get_stylesheet_directory_uri() . "/build/{$this->name}.js",
 			array('wp-blocks', 'wp-editor')
 		);
-		register_block_type(
-			"ourblocktheme/{$this->name}",
-			array(
-				'editor_script' => $this->name
-			)
+
+		$ourArgs = array(
+			'editor_script' => $this->name,
 		);
+		if ($this->renderCallback) {
+			$ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
+		}
+
+		register_block_type("ourblocktheme/{$this->name}", $ourArgs);
 	}
 }
-new JSXBlock('banner');
+new JSXBlock('banner', true);
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
