@@ -340,11 +340,11 @@ new JSXBlock('slide', true, ['themeimagepath' => get_theme_file_uri('/images/')]
 
 
 function myallowedblocks($allowed_block_types, $editor_context)
-{	
+{
 	// if you are on a page/post editor screen
-	if(!empty($editor_context->post){
+	if (!empty($editor_context->post)) {
 		return $allowed_block_types;
-	})
+	}
 	// if you are on the FSE screen
 	return array('ourblocktheme/header', 'ourblocktheme/footer');
 }

@@ -15,6 +15,9 @@ define('NEWDATABASETABLEPATH', plugin_dir_path(__FILE__));
 
 class PetAdoptionTablePlugin
 {
+  public $charset;
+  public $tablename;
+
   function __construct()
   {
     global $wpdb;
@@ -122,6 +125,8 @@ $petAdoptionTablePlugin = new PetAdoptionTablePlugin();
 
 class OurPluginPlaceholderBlock
 {
+  public $name;
+
   function __construct($name)
   {
     $this->name = $name;
