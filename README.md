@@ -1,4 +1,4 @@
-# Fictional University Block Theme 
+# Fictional University Block Theme
 
 A Classic Theme. You can purchase the complete Course using this [LINK](https://www.udemy.com/become-a-wordpress-developer-php-javascript/?couponCode=LEARNWEBCODESITE)
 
@@ -54,5 +54,5 @@ A block editor implementation of the `new-database-table` plugin.
 
 ---
 
-## Additional Resources
+## Database Backups
 The repository includes the `ai1wm-backups` directory under `wp-content`, containing database backups created with the `All-In-One WP Migration` plugin (included).
