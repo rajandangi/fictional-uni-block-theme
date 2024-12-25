@@ -276,25 +276,24 @@ function fictional_university_blocks()
     register_block_type_from_metadata(__DIR__ . '/build/footer');
     register_block_type_from_metadata(__DIR__ . '/build/header');
     register_block_type_from_metadata(__DIR__ . '/build/eventsandblogs');
+    register_block_type_from_metadata(__DIR__ . '/build/archive');
+    register_block_type_from_metadata(__DIR__ . '/build/archivecampus');
+    register_block_type_from_metadata(__DIR__ . '/build/singlepost');
+    register_block_type_from_metadata(__DIR__ . '/build/page');
+    register_block_type_from_metadata(__DIR__ . '/build/blogindex');
+    register_block_type_from_metadata(__DIR__ . '/build/programarchive');
+    register_block_type_from_metadata(__DIR__ . '/build/singleprogram');
+    register_block_type_from_metadata(__DIR__ . '/build/singleprofessor');
+    register_block_type_from_metadata(__DIR__ . '/build/mynotes');
+    register_block_type_from_metadata(__DIR__ . '/build/archiveevent');
+    register_block_type_from_metadata(__DIR__ . '/build/pastevents');
+    register_block_type_from_metadata(__DIR__ . '/build/search');
+    register_block_type_from_metadata(__DIR__ . '/build/searchresults');
+    register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
+    register_block_type_from_metadata(__DIR__ . '/build/singleevent');
 }
 add_action('init', 'fictional_university_blocks');
 
-
-new PlaceholderBlock('singlepost');
-new PlaceholderBlock('page');
-new PlaceholderBlock('blogindex');
-new PlaceholderBlock('programarchive');
-new PlaceholderBlock('singleprogram');
-new PlaceholderBlock('singleprofessor');
-new PlaceholderBlock('mynotes');
-new PlaceholderBlock("archivecampus");
-new PlaceholderBlock("archiveevent");
-new PlaceholderBlock("archive");
-new PlaceholderBlock("pastevents");
-new PlaceholderBlock("search");
-new PlaceholderBlock("searchresults");
-new PlaceholderBlock("singlecampus");
-new PlaceholderBlock("singleevent");
 
 class JSXBlock
 {
