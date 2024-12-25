@@ -1,6 +1,6 @@
 import { link } from "@wordpress/icons"
 import { ToolbarGroup, ToolbarButton, Popover, Button, PanelBody, PanelRow, ColorPalette } from "@wordpress/components"
-import { RichText, InspectorControls, BlockControls, __experimentalLinkControl as LinkControl, getColorObjectByColorValue } from "@wordpress/block-editor"
+import { useBlockProps, RichText, InspectorControls, BlockControls, __experimentalLinkControl as LinkControl, getColorObjectByColorValue } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
 import { useState } from "@wordpress/element"
 import { __ } from "@wordpress/i18n"
@@ -19,6 +19,7 @@ registerBlockType("ourblocktheme/genericbutton", {
 })
 
 function EditComponent(props) {
+    const blockProps = useBlockProps();
     const [isLinkPickerVisible, setLinkPickerVisible] = useState(false);
 
     function handleTextChange(newText) {
@@ -44,7 +45,7 @@ function EditComponent(props) {
     }
 
     return (
-        <>
+        <div {...blockProps}>
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton onClick={buttonHandler} icon={link} />
@@ -89,7 +90,7 @@ function EditComponent(props) {
                     <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
                 </Popover>
             )}
-        </>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import { InnerBlocks } from "@wordpress/block-editor"
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
 
 registerBlockType("ourblocktheme/slideshow", {
@@ -15,10 +15,13 @@ registerBlockType("ourblocktheme/slideshow", {
 })
 
 function EditComponent() {
+    const blockProps = useBlockProps();
     return (
-        <div style={{ background: "#333", padding: "35px" }}>
-            <p style={{ textAlign: "center", fontSize: "20px", color: "#fff" }}>Slideshow</p>
-            <InnerBlocks allowedBlocks={["ourblocktheme/slide"]} />
+        <div {...blockProps}>
+            <div style={{ background: "#333", padding: "35px" }}>
+                <p style={{ textAlign: "center", fontSize: "20px", color: "#fff" }}>Slideshow</p>
+                <InnerBlocks allowedBlocks={["ourblocktheme/slide"]} />
+            </div>
         </div>
     )
 }

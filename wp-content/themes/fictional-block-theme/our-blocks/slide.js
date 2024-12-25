@@ -1,6 +1,6 @@
 import apiFetch from "@wordpress/api-fetch"
 import { Button, PanelBody, PanelRow } from "@wordpress/components"
-import { InnerBlocks, InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
+import { useBlockProps, InnerBlocks, InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
 import { registerBlockType } from "@wordpress/blocks"
 import { useEffect } from "@wordpress/element"
 
@@ -21,6 +21,8 @@ registerBlockType("ourblocktheme/slide", {
 })
 
 function EditComponent(props) {
+    const blockProps = useBlockProps();
+
     useEffect(function () {
         if (props.attributes.themeimage) {
             props.setAttributes({ imgURL: `${slide.themeimagepath}${props.attributes.themeimage}` })
@@ -46,7 +48,7 @@ function EditComponent(props) {
     }
 
     return (
-        <>
+        <div {...blockProps}>
             <InspectorControls>
                 <PanelBody title="Background" initialOpen={true}>
                     <PanelRow>
@@ -69,7 +71,7 @@ function EditComponent(props) {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

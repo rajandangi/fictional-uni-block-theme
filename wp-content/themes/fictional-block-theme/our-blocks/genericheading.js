@@ -21,7 +21,7 @@ function EditComponent(props) {
     }
 
     return (
-        <>
+        <div {...blockProps}>
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton isPressed={props.attributes.size === "large"} onClick={() => props.setAttributes({ size: "large" })}>
@@ -44,7 +44,7 @@ function EditComponent(props) {
                 onChange={handleTextChange}
                 placeholder={__('Generic Heading...')}
             />
-        </>
+        </div>
     )
 }
 
