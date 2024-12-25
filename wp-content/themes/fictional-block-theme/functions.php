@@ -238,6 +238,9 @@ function makeNotePrivate($data, $postarr)
 // Register New blocks
 function fictional_university_blocks()
 {
+    // Pass data to the wp-editor script
+    wp_localize_script('wp-editor', 'ourThemeData', ['root_url' => get_stylesheet_directory_uri()]);
+
     register_block_type_from_metadata(__DIR__ . '/build/footer');
     register_block_type_from_metadata(__DIR__ . '/build/header');
     register_block_type_from_metadata(__DIR__ . '/build/eventsandblogs');
@@ -256,6 +259,7 @@ function fictional_university_blocks()
     register_block_type_from_metadata(__DIR__ . '/build/searchresults');
     register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
     register_block_type_from_metadata(__DIR__ . '/build/singleevent');
+    register_block_type_from_metadata(__DIR__ . '/build/banner');
 }
 add_action('init', 'fictional_university_blocks');
 
@@ -303,7 +307,7 @@ class JSXBlock
         register_block_type("ourblocktheme/{$this->name}", $ourArgs);
     }
 }
-new JSXBlock('banner', true);
+// new JSXBlock('banner', true);
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
 new JSXBlock('slideshow', true);
