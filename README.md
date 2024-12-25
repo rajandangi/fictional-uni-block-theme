@@ -56,3 +56,6 @@ A block editor implementation of the `new-database-table` plugin.
 
 ## Database Backups
 The repository includes the `ai1wm-backups` directory under `wp-content`, containing database backups created with the `All-In-One WP Migration` plugin (included).
+
+## Theme Setup
+Run `npm install` and `npm run build` to compile the theme assets.
