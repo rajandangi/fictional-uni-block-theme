@@ -15,7 +15,7 @@
 
 # Unignore contents of specific wp-content subdirectories
 !wp-content/themes/fictional-block-theme/**
-!wp-content/uploads/** 
+!wp-content/uploads/**
 !wp-content/mu-plugins/**
 !wp-content/ai1wm-backups/**
 !README.md
@@ -36,6 +36,6 @@
 
 
 # Ignore specific folders even if they are inside the unignored directories
-wp-content/themes/fictional-university-theme/build/
+wp-content/themes/fictional-block-theme/build/
 **/.DS_Store
 **/node_modules/
