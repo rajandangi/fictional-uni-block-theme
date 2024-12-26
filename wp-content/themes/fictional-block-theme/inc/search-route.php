@@ -13,7 +13,8 @@ function universityRegisterSearch()
         'search',
         array(
             'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'universitySearchResults'
+            'callback' => 'universitySearchResults',
+            'permission_callback' => '__return_true'
         )
     );
 }
@@ -56,7 +57,7 @@ function universitySearchResults($data)
                 )
             );
         }
-        
+
         if (get_post_type() == 'program') {
             $relatedCampuses = get_field('related_campus');
             if ($relatedCampuses) {
@@ -122,7 +123,7 @@ function universitySearchResults($data)
                     'key' => 'related_programs',
                     'compare' => 'LIKE',
                     'value' => '"' . $item['id'] . '"',
-                    // 
+                    //
                 )
             );
         }
@@ -166,7 +167,6 @@ function universitySearchResults($data)
                     )
                 );
             }
-
         }
         $results['professors'] = array_values(array_unique($results['professors'], SORT_REGULAR));
         $results['events'] = array_values(array_unique($results['events'], SORT_REGULAR));

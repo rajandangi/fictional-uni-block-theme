@@ -21,7 +21,7 @@ function EditComponent(props) {
     }
 
     return (
-        <div {...blockProps}>
+        <>
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton isPressed={props.attributes.size === "large"} onClick={() => props.setAttributes({ size: "large" })}>
@@ -35,16 +35,18 @@ function EditComponent(props) {
                     </ToolbarButton>
                 </ToolbarGroup>
             </BlockControls>
-            <RichText
-                {...blockProps}
-                allowedFormats={["core/bold", "core/italic"]}
-                tagName="h1"
-                className={`headline headline--${props.attributes.size}`}
-                value={props.attributes.text}
-                onChange={handleTextChange}
-                placeholder={__('Generic Heading...')}
-            />
-        </div>
+            <div {...blockProps}>
+                <RichText
+                    {...blockProps}
+                    allowedFormats={["core/bold", "core/italic"]}
+                    tagName="h1"
+                    className={`headline headline--${props.attributes.size}`}
+                    value={props.attributes.text}
+                    onChange={handleTextChange}
+                    placeholder={__('Generic Heading...')}
+                />
+            </div>
+        </>
     )
 }
 

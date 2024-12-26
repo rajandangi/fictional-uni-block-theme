@@ -239,7 +239,10 @@ function makeNotePrivate($data, $postarr)
 function fictional_university_blocks()
 {
     // Pass data to the wp-editor script
-    wp_localize_script('wp-editor', 'ourThemeData', ['root_url' => get_stylesheet_directory_uri()]);
+    wp_localize_script('wp-editor', 'ourThemeData', [
+        'root_url' => get_stylesheet_directory_uri(),
+        'theme_image_path' => get_theme_file_uri('/images/')
+    ]);
 
     register_block_type_from_metadata(__DIR__ . '/build/footer');
     register_block_type_from_metadata(__DIR__ . '/build/header');
@@ -259,7 +262,10 @@ function fictional_university_blocks()
     register_block_type_from_metadata(__DIR__ . '/build/searchresults');
     register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
     register_block_type_from_metadata(__DIR__ . '/build/singleevent');
+
+    // Blocks with Editor controls
     register_block_type_from_metadata(__DIR__ . '/build/banner');
+    register_block_type_from_metadata(__DIR__ . '/build/slide');
 }
 add_action('init', 'fictional_university_blocks');
 
@@ -307,11 +313,9 @@ class JSXBlock
         register_block_type("ourblocktheme/{$this->name}", $ourArgs);
     }
 }
-// new JSXBlock('banner', true);
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
 new JSXBlock('slideshow', true);
-new JSXBlock('slide', true, ['themeimagepath' => get_theme_file_uri('/images/')]);
 
 
 function myallowedblocks($allowed_block_types, $editor_context)

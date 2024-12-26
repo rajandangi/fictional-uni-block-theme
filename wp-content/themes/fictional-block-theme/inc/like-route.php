@@ -7,7 +7,10 @@ function universityLikeRoutes()
         'manageLike',
         array(
             'methods' => 'POST',
-            'callback' => 'createLike'
+            'callback' => 'createLike',
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            }
         )
     );
     register_rest_route(
@@ -15,7 +18,10 @@ function universityLikeRoutes()
         'manageLike',
         array(
             'methods' => 'DELETE',
-            'callback' => 'deleteLike'
+            'callback' => 'deleteLike',
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            }
         )
     );
 }

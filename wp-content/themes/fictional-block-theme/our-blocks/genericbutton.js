@@ -45,7 +45,7 @@ function EditComponent(props) {
     }
 
     return (
-        <div {...blockProps}>
+        <>
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton onClick={buttonHandler} icon={link} />
@@ -75,22 +75,24 @@ function EditComponent(props) {
                     </PanelRow>
                 </PanelBody>
             </InspectorControls >
-
-            <RichText
-                allowedFormats={[]}
-                tagName="a"
-                className={`btn headline btn--${props.attributes.size} btn--${props.attributes.colorName}`}
-                value={props.attributes.text}
-                onChange={handleTextChange}
-                placeholder={__('Find Your Major')}
-            />
-            {isLinkPickerVisible && (
-                <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
-                    <LinkControl value={props.attributes.linkObject} title={props.attributes.linkObject.title} onChange={handleLinkChange} />
-                    <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
-                </Popover>
-            )}
-        </div>
+            
+            <div {...blockProps}>
+                <RichText
+                    allowedFormats={[]}
+                    tagName="a"
+                    className={`btn headline btn--${props.attributes.size} btn--${props.attributes.colorName}`}
+                    value={props.attributes.text}
+                    onChange={handleTextChange}
+                    placeholder={__('Find Your Major')}
+                />
+                {isLinkPickerVisible && (
+                    <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
+                        <LinkControl value={props.attributes.linkObject} title={props.attributes.linkObject.title} onChange={handleLinkChange} />
+                        <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
+                    </Popover>
+                )}
+            </div>
+        </>
     )
 }
 
