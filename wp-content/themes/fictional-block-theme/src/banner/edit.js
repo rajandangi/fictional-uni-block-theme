@@ -1,7 +1,6 @@
 import apiFetch from "@wordpress/api-fetch"
 import { Button, PanelBody, PanelRow } from "@wordpress/components"
 import { useBlockProps, InnerBlocks, InspectorControls, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor"
-import { registerBlockType } from "@wordpress/blocks"
 import { useEffect } from "@wordpress/element"
 
 export default function Edit(props) {

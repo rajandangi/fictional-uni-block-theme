@@ -266,6 +266,7 @@ function fictional_university_blocks()
     // Blocks with Editor controls
     register_block_type_from_metadata(__DIR__ . '/build/banner');
     register_block_type_from_metadata(__DIR__ . '/build/slide');
+    register_block_type_from_metadata(__DIR__ . '/build/slideshow');
 }
 add_action('init', 'fictional_university_blocks');
 
@@ -315,7 +316,6 @@ class JSXBlock
 }
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
-new JSXBlock('slideshow', true);
 
 
 function myallowedblocks($allowed_block_types, $editor_context)
