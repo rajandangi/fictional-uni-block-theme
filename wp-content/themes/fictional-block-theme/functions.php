@@ -267,55 +267,12 @@ function fictional_university_blocks()
     register_block_type_from_metadata(__DIR__ . '/build/banner');
     register_block_type_from_metadata(__DIR__ . '/build/slide');
     register_block_type_from_metadata(__DIR__ . '/build/slideshow');
+
+    // Block without render callback
+    register_block_type_from_metadata(__DIR__ . '/build/genericheading');
+    register_block_type_from_metadata(__DIR__ . '/build/genericbutton');
 }
 add_action('init', 'fictional_university_blocks');
-
-
-class JSXBlock
-{
-    private $name;
-    private $renderCallback;
-    private $data;
-
-    function __construct($name, $renderCallback = null, $data = null)
-    {
-        $this->name = $name;
-        $this->data = $data;
-        $this->renderCallback = $renderCallback;
-        add_action('init', [$this, 'onInit']);
-    }
-
-    function ourRenderCallback($attributes, $content)
-    {
-        ob_start();
-        require get_theme_file_path("/our-blocks/{$this->name}.php");
-        return ob_get_clean();
-    }
-
-    function onInit()
-    {
-        wp_register_script(
-            $this->name,
-            get_stylesheet_directory_uri() . "/build/{$this->name}.js",
-            array('wp-blocks', 'wp-editor')
-        );
-
-        if ($this->data) {
-            wp_localize_script($this->name, $this->name, $this->data);
-        }
-
-        $ourArgs = array(
-            'editor_script' => $this->name,
-        );
-        if ($this->renderCallback) {
-            $ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
-        }
-
-        register_block_type("ourblocktheme/{$this->name}", $ourArgs);
-    }
-}
-new JSXBlock('genericheading');
-new JSXBlock('genericbutton');
 
 
 function myallowedblocks($allowed_block_types, $editor_context)

@@ -1,24 +1,11 @@
 import { link } from "@wordpress/icons"
 import { ToolbarGroup, ToolbarButton, Popover, Button, PanelBody, PanelRow, ColorPalette } from "@wordpress/components"
 import { useBlockProps, RichText, InspectorControls, BlockControls, __experimentalLinkControl as LinkControl, getColorObjectByColorValue } from "@wordpress/block-editor"
-import { registerBlockType } from "@wordpress/blocks"
 import { useState } from "@wordpress/element"
 import { __ } from "@wordpress/i18n"
-import ourColors from "../inc/ourColors"
+import ourColors from "../../inc/ourColors"
 
-registerBlockType("ourblocktheme/genericbutton", {
-    title: "Generic Button",
-    attributes: {
-        text: { type: "string" },
-        size: { type: "string", default: "large" },
-        linkObject: { type: "object", default: { url: "" } },
-        colorName: { type: "string", default: "blue" }
-    },
-    edit: EditComponent,
-    save: SaveComponent
-})
-
-function EditComponent(props) {
+export default function Edit(props) {
     const blockProps = useBlockProps();
     const [isLinkPickerVisible, setLinkPickerVisible] = useState(false);
 
@@ -45,7 +32,7 @@ function EditComponent(props) {
     }
 
     return (
-        <>
+        <div {...blockProps}>
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton onClick={buttonHandler} icon={link} />
@@ -75,31 +62,21 @@ function EditComponent(props) {
                     </PanelRow>
                 </PanelBody>
             </InspectorControls >
-            
-            <div {...blockProps}>
-                <RichText
-                    allowedFormats={[]}
-                    tagName="a"
-                    className={`btn headline btn--${props.attributes.size} btn--${props.attributes.colorName}`}
-                    value={props.attributes.text}
-                    onChange={handleTextChange}
-                    placeholder={__('Find Your Major')}
-                />
-                {isLinkPickerVisible && (
-                    <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
-                        <LinkControl value={props.attributes.linkObject} title={props.attributes.linkObject.title} onChange={handleLinkChange} />
-                        <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
-                    </Popover>
-                )}
-            </div>
-        </>
-    )
-}
 
-function SaveComponent(props) {
-    return (
-        <a href={props.attributes.linkObject.url} className={`btn headline btn--${props.attributes.size} btn--${props.attributes.colorName}`}>
-            {props.attributes.text}
-        </a>
+            <RichText
+                allowedFormats={[]}
+                tagName="a"
+                className={`btn headline btn--${props.attributes.size} btn--${props.attributes.colorName}`}
+                value={props.attributes.text}
+                onChange={handleTextChange}
+                placeholder={__('Find Your Major')}
+            />
+            {isLinkPickerVisible && (
+                <Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
+                    <LinkControl value={props.attributes.linkObject} title={props.attributes.linkObject.title} onChange={handleLinkChange} />
+                    <Button variant="primary" onClick={() => setLinkPickerVisible(false)} style={{ display: "block", width: "100%" }}>{__('Confirm Link')}</Button>
+                </Popover>
+            )}
+        </div>
     )
 }
