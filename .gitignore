@@ -33,6 +33,8 @@
 !wp-content/plugins/featured-professor/**
 !wp-content/plugins/new-database-table-block/
 !wp-content/plugins/new-database-table-block/**
+!wp-content/plugins/interactivity-quiz
+!wp-content/plugins/interactivity-quiz/**
 
 
 # Ignore specific folders even if they are inside the unignored directories
