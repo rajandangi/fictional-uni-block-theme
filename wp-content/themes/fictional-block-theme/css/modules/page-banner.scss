@@ -1,3 +1,5 @@
+@use "../base/mixins" as *;
+
 .page-banner {
   background-color: #000;
   padding: 80px 0 40px 0;

@@ -244,33 +244,33 @@ function fictional_university_blocks()
         'theme_image_path' => get_theme_file_uri('/images/')
     ]);
 
-    register_block_type_from_metadata(__DIR__ . '/build/footer');
-    register_block_type_from_metadata(__DIR__ . '/build/header');
-    register_block_type_from_metadata(__DIR__ . '/build/eventsandblogs');
-    register_block_type_from_metadata(__DIR__ . '/build/archive');
-    register_block_type_from_metadata(__DIR__ . '/build/archivecampus');
-    register_block_type_from_metadata(__DIR__ . '/build/singlepost');
-    register_block_type_from_metadata(__DIR__ . '/build/page');
-    register_block_type_from_metadata(__DIR__ . '/build/blogindex');
-    register_block_type_from_metadata(__DIR__ . '/build/programarchive');
-    register_block_type_from_metadata(__DIR__ . '/build/singleprogram');
-    register_block_type_from_metadata(__DIR__ . '/build/singleprofessor');
-    register_block_type_from_metadata(__DIR__ . '/build/mynotes');
-    register_block_type_from_metadata(__DIR__ . '/build/archiveevent');
-    register_block_type_from_metadata(__DIR__ . '/build/pastevents');
-    register_block_type_from_metadata(__DIR__ . '/build/search');
-    register_block_type_from_metadata(__DIR__ . '/build/searchresults');
-    register_block_type_from_metadata(__DIR__ . '/build/singlecampus');
-    register_block_type_from_metadata(__DIR__ . '/build/singleevent');
+    register_block_type_from_metadata(__DIR__ . '/dist/archive');
+    register_block_type_from_metadata(__DIR__ . '/dist/archivecampus');
+    register_block_type_from_metadata(__DIR__ . '/dist/archiveevent');
+    register_block_type_from_metadata(__DIR__ . '/dist/blogindex');
+    register_block_type_from_metadata(__DIR__ . '/dist/eventsandblogs');
+    register_block_type_from_metadata(__DIR__ . '/dist/footer');
+    register_block_type_from_metadata(__DIR__ . '/dist/header');
+    register_block_type_from_metadata(__DIR__ . '/dist/mynotes');
+    register_block_type_from_metadata(__DIR__ . '/dist/page');
+    register_block_type_from_metadata(__DIR__ . '/dist/pastevents');
+    register_block_type_from_metadata(__DIR__ . '/dist/programarchive');
+    register_block_type_from_metadata(__DIR__ . '/dist/search');
+    register_block_type_from_metadata(__DIR__ . '/dist/searchresults');
+    register_block_type_from_metadata(__DIR__ . '/dist/singlecampus');
+    register_block_type_from_metadata(__DIR__ . '/dist/singleevent');
+    register_block_type_from_metadata(__DIR__ . '/dist/singlepost');
+    register_block_type_from_metadata(__DIR__ . '/dist/singleprofessor');
+    register_block_type_from_metadata(__DIR__ . '/dist/singleprogram');
 
     // Blocks with Editor controls
-    register_block_type_from_metadata(__DIR__ . '/build/banner');
-    register_block_type_from_metadata(__DIR__ . '/build/slide');
-    register_block_type_from_metadata(__DIR__ . '/build/slideshow');
+    register_block_type_from_metadata(__DIR__ . '/dist/banner');
+    register_block_type_from_metadata(__DIR__ . '/dist/slide');
+    register_block_type_from_metadata(__DIR__ . '/dist/slideshow');
 
     // Block without render callback
-    register_block_type_from_metadata(__DIR__ . '/build/genericheading');
-    register_block_type_from_metadata(__DIR__ . '/build/genericbutton');
+    register_block_type_from_metadata(__DIR__ . '/dist/genericbutton');
+    register_block_type_from_metadata(__DIR__ . '/dist/genericheading');
 }
 add_action('init', 'fictional_university_blocks');
 

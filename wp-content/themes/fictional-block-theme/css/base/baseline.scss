@@ -1,20 +1,4 @@
-@mixin atSmall {
-  @media (min-width: 530px) {
-    @content;
-  }
-}
-
-@mixin atSmallMedium {
-  @media (min-width: 767px) {
-    @content;
-  }
-}
-
-@mixin atMedium {
-  @media (min-width: 960px) {
-    @content;
-  }
-}
+@use "variables" as *;
 
 body {
   color: #333;

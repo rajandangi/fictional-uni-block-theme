@@ -4,10 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "wp-scripts build",
-        "start": "wp-scripts start src/index.js our-blocks/genericheading.js our-blocks/genericbutton.js our-blocks/slideshow.js",
-        "dev": "wp-scripts start",
-        "devFast": "wp-scripts start",
+        "build": "npm run buildIndex & npm run buildBlocks",
+        "start": "npm run startIndex & npm run startBlocks",
+        "startIndex": "wp-scripts start ./src/index.js",
+        "startBlocks": "wp-scripts start --webpack-src-dir=our-blocks --output-path=dist",
+        "buildIndex": "wp-scripts build ./src/index.js",
+        "buildBlocks": "wp-scripts build --webpack-src-dir=our-blocks --output-path=dist",
+        "packages-update": "wp-scripts packages-update",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],

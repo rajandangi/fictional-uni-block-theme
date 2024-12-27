@@ -1,3 +1,6 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
 .main-navigation {
   padding-top: 2px;
 

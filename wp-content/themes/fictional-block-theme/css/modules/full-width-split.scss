@@ -1,3 +1,6 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
 .full-width-split {
   @include atMedium {
     display: flex;

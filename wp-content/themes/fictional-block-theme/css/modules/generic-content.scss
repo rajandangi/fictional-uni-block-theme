@@ -1,3 +1,5 @@
+@use "../base/mixins" as *;
+
 .generic-content {
   p,
   li {
