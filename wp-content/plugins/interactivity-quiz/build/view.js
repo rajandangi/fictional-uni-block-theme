@@ -71,9 +71,9 @@ const {
     }
   },
   actions: {
-    buttonHandler() {
+    guessAttempt() {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      context.clickCount += 1;
+      console.log(context);
     },
     toggleOpen() {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
