@@ -23,17 +23,8 @@ wp_interactivity_state('create-block', ['solvedCount' => 0]);
 <style>
     .solved-counter {
         margin: 1rem 0;
-        background-color: #f1f1f1;
-        padding: 10px;
+        background: #EBEBEB;
+        padding: 1rem;
         border-radius: 5px;
-        margin-bottom: 20px;
-    }
-
-    .solved-counter p {
-        margin: 0;
-    }
-
-    .solved-counter strong {
-        color: #333;
     }
 </style>
