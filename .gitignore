@@ -35,6 +35,8 @@
 !wp-content/plugins/new-database-table-block/**
 !wp-content/plugins/interactivity-quiz
 !wp-content/plugins/interactivity-quiz/**
+!wp-content/plugins/solved-counter
+!wp-content/plugins/solved-counter/**
 
 
 # Ignore specific folders even if they are inside the unignored directories
