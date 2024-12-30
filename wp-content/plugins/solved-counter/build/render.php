@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHP file to use when rendering the block type on the server to show on the front end.
  *
@@ -10,47 +11,29 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
-// Generates a unique id for aria-controls.
-$unique_id = wp_unique_id( 'p-' );
 
-// Adds the global state.
-wp_interactivity_state(
-	'create-block',
-	array(
-		'isDark'    => false,
-		'darkText'  => esc_html__( 'Switch to Light', 'solved-counter' ),
-		'lightText' => esc_html__( 'Switch to Dark', 'solved-counter' ),
-		'themeText'	=> esc_html__( 'Switch to Dark', 'solved-counter' ),
-	)
-);
+wp_interactivity_state('create-block', ['solvedCount' => 0]);
 ?>
 
-<div
-	<?php echo get_block_wrapper_attributes(); ?>
-	data-wp-interactive="create-block"
-	<?php echo wp_interactivity_data_wp_context( array( 'isOpen' => false ) ); ?>
-	data-wp-watch="callbacks.logIsOpen"
-	data-wp-class--dark-theme="state.isDark"
->
-	<button
-		data-wp-on--click="actions.toggleTheme"
-		data-wp-text="state.themeText"
-	></button>
-
-	<button
-		data-wp-on--click="actions.toggleOpen"
-		data-wp-bind--aria-expanded="context.isOpen"
-		aria-controls="<?php echo esc_attr( $unique_id ); ?>"
-	>
-		<?php esc_html_e( 'Toggle', 'solved-counter' ); ?>
-	</button>
-
-	<p
-		id="<?php echo esc_attr( $unique_id ); ?>"
-		data-wp-bind--hidden="!context.isOpen"
-	>
-		<?php
-			esc_html_e( 'Solved Counter - hello from an interactive block!', 'solved-counter' );
-		?>
-	</p>
+<!-- data-wp-interactive is a must for the block to work with state -->
+<div class="solved-counter" data-wp-interactive="create-block">
+    <p>Questions Solved: <strong><span data-wp-text="state.solvedCount"></span></strong></p>
 </div>
+
+<style>
+    .solved-counter {
+        margin: 1rem 0;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .solved-counter p {
+        margin: 0;
+    }
+
+    .solved-counter strong {
+        color: #333;
+    }
+</style>

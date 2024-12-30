@@ -16,6 +16,8 @@ $unique_id = wp_unique_id('p-');
 $attributes['showCorrectMessage'] = false;
 $attributes['showIncorrectMessage'] = false;
 $attributes['delyShowIcon'] = false;
+
+wp_interactivity_state('create-block', ['solvedCount' => 0]);
 ?>
 <div id="<?php echo esc_attr($unique_id); ?>" style="background-color: <?php echo $attributes['bgColor']; ?>;" class="paying-attention-frontend" data-wp-interactive="create-block" <?php echo wp_interactivity_data_wp_context($attributes); ?>>
     <p><?php echo $attributes['question']; ?></p>

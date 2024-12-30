@@ -16,6 +16,8 @@ const { state } = store('create-block', {
             const answerIndex = context.answers.indexOf(clickedAnswer);
 
             if (answerIndex === context.correctAnswer) {
+                state.solvedCount++;
+
                 context.showCorrectMessage = true;
                 setTimeout(() => {
                     context.delyShowIcon = true;

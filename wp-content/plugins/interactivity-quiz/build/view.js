@@ -74,6 +74,7 @@ const {
       const clickedAnswer = context.item;
       const answerIndex = context.answers.indexOf(clickedAnswer);
       if (answerIndex === context.correctAnswer) {
+        state.solvedCount++;
         context.showCorrectMessage = true;
         setTimeout(() => {
           context.delyShowIcon = true;
